@@ -5,38 +5,47 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class EvenNumberTest {
-    EvenNumber evenNumber;
+    EvenNumber evenNumber=new EvenNumber();
 
     @Before
-    public void setUp() throws Exception {
-        // This methods runs, before running any one of the test case
-// This method is used to initialize the required variables
+    public void setUp()
+    {
+        System.out.println("Before");
         evenNumber=new EvenNumber();
     }
 
     @After
-    public void tearDown() throws Exception {
-        // This method runs, after running all the test cases
-// This method is used to clear the initialized variables
+    public void tearDown()
+    {
+        System.out.println("After");
         evenNumber=null;
     }
 
     @Test
-    public void isEven() {
+    public void CheckEvenNumber()
+
+    {
+        //assert
         assertTrue(evenNumber.isEven(312));
     }
     @Test
-    public void isOdd() {
+    public void CheckOddNUmber()
+    {
+
         boolean expectedValue=false;
         boolean actualValue=evenNumber.isEven(313);
-        assertEquals(expectedValue,actualValue);//checking expected and actual values
+        //assert
+        assertEquals(expectedValue,actualValue);
 
     }
     @Test
-    public void isNotOdd() {
+    public void CheckNotOddNumber()
+    {
+
         boolean expectedValue=false;
         boolean actualValue=evenNumber.isEven(312);
-        assertNotEquals(expectedValue,actualValue);//checking expected and actual values
+        //assert
+        assertNotEquals(expectedValue,actualValue);
     }
 
 }

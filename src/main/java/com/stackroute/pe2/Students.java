@@ -1,33 +1,41 @@
 package com.stackroute.pe2;
 
-public class Students {
-    public int average(int arr[])
-    {
-        int sum=0 ;
-        for(int element:arr){
-            sum+=element;
-        }
-        return sum/arr.length;
+import java.util.Scanner;
 
-    }
-    public int lowest(int arr[])
-    {
-        int minimum=arr[0] ;
-        for(int element:arr){
-            if(element<minimum)
-                minimum=element;
-        }
-        return minimum;
+public class Students
+{
 
-    }
-    public int highest(int arr[])
-    {
+    public void calculateGrade(int n, int... a) {
 
-        int maximum=arr[0] ;
-        for(int element:arr){
-            if(element> maximum)
-                maximum=element;
+//		declaration and initialization
+        int avg = 0, sum = 0, temp;
+
+//		if n not equal to array length
+        if (n != a.length) {
+            System.out.print("You need to enter " + n + " grades. But you have entered only " + a.length + " grades");
+        } else {
+            for (int i = 0; i < n; i++) {
+                sum += a[i];    // sum of array
+            }
+
+            //sorting
+            for (int i = 0; i < n; i++) {
+                if (a[i] >= 0 && a[i] <= 100) {
+                    for (int j = i + 1; j < n; j++) {
+                        if (a[i] > a[j]) {
+                            temp = a[i];
+                            a[i] = a[j];
+                            a[j] = temp;
+                        }
+                    }
+                } else {    // not a valid grade
+                    System.out.print("Please enter valid grades");
+                    return;
+                }
+            }
+            avg = sum / n;      // average calculation
+            System.out.print("The average is " + avg + "\nThe minimum is " + a[0] + "\nThe maximum is " + a[n - 1]);
+
         }
-        return maximum;
     }
 }

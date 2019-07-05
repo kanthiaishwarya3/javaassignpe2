@@ -15,6 +15,6 @@ public class Uppercase {
         while ((st=bufferedReader.readLine())!=null){
             result.append(st).append("\n");
         }
-        return result.toString().toLowerCase(Locale.ENGLISH).trim();
+        return result.toString().toUpperCase(Locale.ENGLISH).trim();
     }
 }

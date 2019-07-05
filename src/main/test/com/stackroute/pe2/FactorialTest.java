@@ -9,23 +9,34 @@ import static org.junit.Assert.*;
 public class FactorialTest {
 
     @Before
-    private void setUp() throws Exception {
-        // This methods runs, before running any one of the test case
-// This method is used to initialize the required variables
+    public void setUp()  {
+        System.out.println("After");
+
     }
 
     @After
-    public void tearDown() throws Exception {
-        // This method runs, after running all the test cases
-// This method is used to clear the initialized variables
+    public void tearDown()
+    {
+        System.out.println("Before");
     }
+
 
     @Test
-    public void TestlongFactorial() {
-        assertEquals(120,Factorial.longFactorial(5));//checking expected and actual values
-        assertEquals(2,Factorial.longFactorial(2));//checking expected and actual values
-        assertEquals(1,Factorial.longFactorial(0));//checking expected and actual values
+    public void CheckFactorial()
+    {
+        //assert
+        assertEquals(120,Factorial.longFactorial(5));
 
     }
+
+
+    @Test
+    public void CheckFactorialof0()
+    {
+        //assert
+        assertEquals(1,Factorial.longFactorial(1));
+
+    }
+
 
 }

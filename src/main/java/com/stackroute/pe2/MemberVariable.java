@@ -1,13 +1,17 @@
 package com.stackroute.pe2;
 
-import org.junit.*;
+public class MemberVariable {
+    Member member;
 
-import static org.junit.Assert.assertArrayEquals;
-class  MemberVariable {
-    String name;
-
-    public String[] isMember(String name, int age, double salary) {
-        String [] arr={name,String.valueOf(age),String.valueOf(salary)};
-        return arr;
+    public String Display (String name, int age, double salary) {
+        if (age <= 0 || salary < 0)
+            return null;
+        member = new Member(name,age,salary);
+        String output;
+        output = "Member's Name: "+member.getName();
+        output += "\nMember's Age: "+member.getAge();
+        output += "\nMember's Salary: "+member.getSalary();
+        return output;
     }
 }
+

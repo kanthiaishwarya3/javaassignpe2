@@ -1,5 +1,7 @@
 package com.stackroute.pe2;
 
+import static org.junit.Assert.*;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,16 +15,15 @@ public class PowerTest {
     @Before
     public void setUp() throws Exception {
 
-// This methods runs, before running any one of the test case
-// This method is used to initialize the required variables
-        power = new Power();
+
+        power = new Power(); //creating the object
 
     }
 
     @After
     public void tearDown() throws Exception {
-// This method runs, after running all the test cases
-// This method is used to clear the initialized variables
+        power=null;
+
     }
 
 
@@ -32,7 +33,7 @@ public class PowerTest {
         Boolean expectedValue =true;
 
         Boolean actualValue = power.isPower(16);
-        assertEquals(expectedValue, actualValue);//checking expected and actual values
+        assertEquals(expectedValue, actualValue);
 
     }
     @Test
@@ -41,7 +42,7 @@ public class PowerTest {
         Boolean expectedValue =false;
 
         Boolean actualValue = power.isPower(43);
-        assertEquals(expectedValue, actualValue);//checking expected and actual values
+        assertEquals(expectedValue, actualValue);
 
     }
 
